@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.os.Process
 import android.util.Log
-import com.example.globalexceptionhandlerapp.MainActivity
 
 class GlobalExceptionHandler(private val defaultUncaughtExceptionHandler: Thread.UncaughtExceptionHandler?, private val applicationContext: Context, private val activityToBeLaunched: Class<*>) :
 
@@ -31,7 +30,7 @@ class GlobalExceptionHandler(private val defaultUncaughtExceptionHandler: Thread
     }
 
     companion object{
-        fun initialize(applicationContext: MainActivity, launchActivity: Class<*>) {
+        fun initialize( applicationContext: Context, launchActivity: Class<*>) {
 
             // Get the default uncaught exception handler
             val defaultUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler()
